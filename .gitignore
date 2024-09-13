@@ -1,0 +1,9 @@
+.env
+
+
+node_modules
+
+
+                                                                                                                                // whatever the files that we are giving in this .gitignore..those files are not get push into the git.
+
+                                                                                                                                //whatever the files that u are not going to push into the git means those files u should place in these gitIgnore

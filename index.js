@@ -9,7 +9,7 @@ const firmRoutes = require('./routes/firmRoutes')
 const productRoutes = require('./routes/productRoutes')
 const cors = require('cors')                                                                                                                            //cors: It allows resources (like images,scripts(javascript),data(API requests),Fonts,stylesheets(CSS) etc.)to be shared b/w different websites
 const path = require('path')                                                                                                                            // This path is inbuilt in nodejs (..we required these for image purpose)
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 dotEnv.config();
 app.use(cors())
 mongoose.connect(process.env.MONGO_URI)
@@ -24,7 +24,7 @@ app.use('/uploads',express.static('uploads'));                                  
 app.listen(PORT, ()=>{
     console.log("Server is Running...")
 })
-app.use("/home",(req,res)=>
+app.use("/",(req,res)=>
 {
     res.send("<h1>Welcome to Swiggy</h1>")
 })

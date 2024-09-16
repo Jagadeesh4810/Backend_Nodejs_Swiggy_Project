@@ -20,7 +20,7 @@ const addFirm = async(req,res)=>
 {
     try{
         const{firmName,area,category,region,offer} = req.body;
-                                                                                                                                //This image is not coming along with above properties.it is coming separately..
+                                                                                                                                j//This image is not coming along with above properties.it is coming separately..
         const image = req.file?req.file.filename:undefined;
         
 

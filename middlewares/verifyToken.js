@@ -13,7 +13,7 @@ const verifyToken = async(req,res,next)=>
        return res.status(401).json({error:"Token is required"});
     }
     try{
-        const decoded = jwt.verify(token,secretKey)                                                                                 //decoded the token ...Ex: rf5bfbtokenrb45 decoded to id
+        const decoded = jwt.verify(token,secretKey)                                                                                 //decoded the token ...
                                                                                                                                     /*In this decoded variable we have payload..look like 
                                                                                                                                     vendorId:{
                                                                                                                                     _id:123gyggxxbj

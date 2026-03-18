@@ -58,7 +58,7 @@ const vendorRegister = async(req,res)=>
          const getAllVendors = async(req,res)=>
          {
             try{
-               const vendors = await Vendor.find().populate('firm');                                                               //here im getting vendor record along with the firm record using populate() method.    
+               const vendors = await Vendor.find().populate('firm');                                                                                                                                                                                                //find()=>fetch all vendor documents                                                             //here im getting vendor record along with the firm record using populate() method.    
                res.json({vendors})
             }
             catch(err)

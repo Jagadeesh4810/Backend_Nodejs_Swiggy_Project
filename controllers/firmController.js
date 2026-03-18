@@ -20,7 +20,7 @@ const addFirm = async(req,res)=>
 {
     try{
         const{firmName,area,category,region,offer} = req.body;
-                                                                                                                                j//This image is not coming along with above properties.it is coming separately..
+                                                                                                                                //This image is not coming along with above properties.it is coming separately..
         const image = req.file?req.file.filename:undefined;
         
 
@@ -48,7 +48,7 @@ const addFirm = async(req,res)=>
 const deleteFirmById = async(req,res)=>
     {
         try {
-            const firmId = req.param.firmId;
+            const firmId = req.params.firmId;
             const deleteFirm = await Firm.findByIdAndDelete(firmId)
             if(!deleteFirm)
             {

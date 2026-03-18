@@ -43,15 +43,13 @@ const getProductByFirm = async(req,res)=>
 {
     try {
         const firmId = req.params.id
-       const firm = await Firm.findById(firmId)
+       const firm = await Firm.findById(firmId).populate("products");
         if(!firm)
         {
             return res.status(404).json({error:"No firm found"})
         }
         const restaurantName = firm.firmName
-        const products = await Product.find({firm:firm._id})
-
-            res.json({restaurantName,products});
+            res.json({restaurantName,products:firm.products});
     } catch (error) {
         console.log(error);
         res.status(500).json({error:"Internal server error"})
@@ -61,7 +59,7 @@ const getProductByFirm = async(req,res)=>
 const deleteProductById = async(req,res)=>
 {
     try {
-        const productId = req.param.productId;
+        const productId = req.params.productId;
         const deleteProduct = await Product.findByIdAndDelete(productId)
         if(!deleteProduct)
         {

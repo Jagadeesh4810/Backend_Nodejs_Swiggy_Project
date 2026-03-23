@@ -42,16 +42,16 @@ const vendorRegister = async(req,res)=>
                 const vendor = await Vendor.findOne({email})
                 if(!vendor||!(await bcrypt.compare(password,vendor.password)))
                 {
-                    res.status(401).json("Invalid username or password");
+                    return res.status(401).json("Invalid username or password");
                 }
                 const token = jwt.sign({vendorId: vendor._id},secretKey,{expiresIn:"1h"})
-                res.status(200).json({success:"Login successful",token});
+                return res.status(200).json({success:"Login successful",token});
                 console.log(token);
             }
             catch(err)
             {
                 console.log(err);
-                res.status(500).json({error:"Internal server error"})
+                return res.status(500).json({error:"Internal server error"})
             }
         }
 

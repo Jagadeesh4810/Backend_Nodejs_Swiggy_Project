@@ -1,7 +1,8 @@
 //Adding firm along with vendor details (like vendor id) into the database 
 const Firm = require('../models/Firm');
 const Vendor = require('../models/Vendor');
-const multer = require('multer');                                                                                                   //Adding images into the database using this multer package
+const multer = require('multer');
+const path = require('path');                                                                                                   //Adding images into the database using this multer package
 
 //Got this code from gpt
 const storage = multer.diskStorage({
